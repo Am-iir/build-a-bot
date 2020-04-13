@@ -5,6 +5,7 @@
                 <div class="top part">
                     <div class="robot-name">
                         {{selectedRobot.head.title}}
+                        <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
                     </div>
                     <img v-bind:src="selectedRobot.head.src" title="head"/>
                     <button v-on:click="selectPrevHead()" class="prev-selector">&#9668;</button>
@@ -66,15 +67,15 @@
             }
         },
         computed:{
-          selectedRobot() {
-              return {
-                  head: availableParts.heads[this.selectedHeadIndex],
-                  leftArm: availableParts.arms[this.selectedLeftArmIndex],
-                  torso: availableParts.torsos[this.selectedTorsoIndex],
-                  rightArm: availableParts.arms[this.selectedRightArmIndex],
-                  base: availableParts.bases[this.selectedBaseIndex],
-              }
-          }
+            selectedRobot() {
+                return {
+                    head: availableParts.heads[this.selectedHeadIndex],
+                    leftArm: availableParts.arms[this.selectedLeftArmIndex],
+                    torso: availableParts.torsos[this.selectedTorsoIndex],
+                    rightArm: availableParts.arms[this.selectedRightArmIndex],
+                    base: availableParts.bases[this.selectedBaseIndex],
+                }
+            }
         },
         methods:{
             selectNextHead(){
@@ -210,8 +211,9 @@
         top: -25px;
         text-align: center;
         width: 100%;
-
-
+    }
+    .sale{
+        color: red;
     }
 
 </style>
