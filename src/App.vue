@@ -29,6 +29,12 @@
 </script>
 
 <style>
+  body{
+    background: linear-gradient(to bottom, #555, #999) fixed;
+  }
+</style>
+
+<style scoped>
 
   header{
     background-color: #999;
@@ -49,9 +55,7 @@
     vertical-align: middle;
     height: 30px;
   }
-  body{
-    background: linear-gradient(to bottom, #555, #999) fixed;
-  }
+
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
   }
